@@ -26,6 +26,13 @@ def create_app():
                                     'DEBUG',
                                     'SQLALCHEMY_DATABASE_URI') 
         print("Loading secret configs from env")
+    
+    # Database Setup (uncomment after database set in SQLALCHEMY_DATABASE_URI)
+    #load database
+    db = SQLAlchemy(app)
+    from app.models import Item
+    db.create_all()
+
 
     # register module blueprints
     from app.module1.views import module1_bp
@@ -33,18 +40,10 @@ def create_app():
     app.register_blueprint(module1_bp)
     app.register_blueprint(module2_bp)
 
-    """
-    # Database Setup (uncomment after database set in SQLALCHEMY_DATABASE_URI)
-    #load database
-    db = SQLAlchemy(app)
-    from app.models import Item
-
-    db.create_all()
 
     # initialize db values 
     # initialize_db()
-    """
-
+    
     """
     # Bonus Flask libraries, for more complex apps
 
