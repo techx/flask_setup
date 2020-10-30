@@ -1,10 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
-	<h1 style="background-color: {{ color }}; color: white; width: 50vw; margin: auto; text-align: center">
+	<h1 style="background-color: {{ color }}; color: white; width: 50vw; margin: auto; text-align: center; margin-bottom: 10px;">
 		{{ line }} Line
 	</h1>
+	<div style="width:100%">
 	{% for stop in stop_data %} 
-	<p> {{ stop }} </p>
+	<p style="margin: auto; text-align: center;">  {{ stop }} </p>
 	{% endfor %}
+	</div>
 {% endblock %}
