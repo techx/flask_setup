@@ -35,9 +35,9 @@ def view():
 	if filt is None:
 		data = Item.query.all()
 	else:
-		data = Item.query.filter(Item.active==bool(filt))
+		data = Item.query.filter(Item.active==bool(filt)).order_by(Item.name).paginate(page, 5).items
 
-	return '<br>'.join(str((item.name, item.active)) for item in data.order_by(Item.name).paginate(page, 5).items)
+	return '<br>'.join(str((item.name, item.active)) for item in data)
 
 
 @module1_bp.route("/delete_all")
