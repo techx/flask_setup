@@ -1,6 +1,4 @@
-import os
-
 FLASK_SECRET_KEY="dis_super_secret_key"
 DEBUG=True
-base = os.path.abspath(os.path.dirname(__file__))
-SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(base, 'app.db')
+SQLALCHEMY_TRACK_MODIFICATIONS=True
+SQLALCHEMY_DATABASE_URI ="postgres://pccwofecighwbr:22b68d4a139ec2c662e638eb5122eb1826a7989351959fb289fb28af8faf377b@ec2-54-146-4-66.compute-1.amazonaws.com:5432/d6hei9r8917t0"

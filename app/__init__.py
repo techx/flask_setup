@@ -23,8 +23,9 @@ def create_app():
         print("Loading secret configs from file")
     else:
         load_from_env(app, 'FLASK_SECRET_KEY',
-                                    'DEBUG',
-                                    'SQLALCHEMY_DATABASE_URI') 
+                        'DEBUG',
+                        'SQLALCHEMY_TRACK_MODIFICATIONS',
+                        'SQLALCHEMY_DATABASE_URI') 
         print("Loading secret configs from env")
     
     # Database Setup (uncomment after database set in SQLALCHEMY_DATABASE_URI)

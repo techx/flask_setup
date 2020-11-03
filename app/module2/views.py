@@ -6,9 +6,6 @@ module2_bp = Blueprint("mod2", __name__, url_prefix='/mod2')
 def hello_world():
 	return "Hello World from module 2!"
 
-
-## API call:
-
 @module2_bp.route("/mbta", methods=['GET'])
 def mbta():
 	line = request.args.get("line", None)
