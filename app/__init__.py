@@ -4,8 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = None
 db = None
-bcrypt = None
-migrate = None 
 
 
 def load_from_env(app, *args):
@@ -43,30 +41,6 @@ def create_app():
 
     # initialize db values 
     # initialize_db()
-    """
-
-    """
-    # Bonus Flask libraries, for more complex apps
-
-    from flask_cors import CORS
-    from flask_jwt_extended import JWTManager
-    from flask_bcrypt import Bcrypt
-    from flask_migrate import Migrate
-
-    # configure database migrations
-    migrate = Migrate()
-    migrate.init_app(app, db)
-    
-    # configure CORS support
-    CORS(app)   
-
-    # configure Bcrypt for password hashing
-    bcrypt = Bcrypt(app)
-
-    # configure JWT (Javascript Web Token) authentication 
-    jwt = JWTManager(app)
-    app.config['JWT_SECRET_KEY'] = app.config['FLASK_SECRET_KEY']
-
     """
 
     return app

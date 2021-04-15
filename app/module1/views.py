@@ -11,22 +11,3 @@ def index():
 @module1_bp.route("/hello_world")
 def hello_world():
     return "Hello World"
-
-# this part is for part 2
-# @module1_bp.route("/requests", methods=['GET', 'POST'])
-# def requests():
-#     if request.method == 'GET':
-#         args = request.args
-#         return f"This is a GET request!\nArgs:\n{args}"
-#     if request.method == "POST":
-#         body = request.get_json() if request.is_json() else "[NOT JSON!]"
-#         return f"This is a POST request!\nPOST body:\n{body}"
-
-# @module1_bp.route("/send_json")
-# def send_json():
-#     return jsonify(request.args)
-
-
-# @module1_bp.route("/status_codes/<int:status>")
-# def status_codes(status):
-#     return "check console for status code", int(status)
