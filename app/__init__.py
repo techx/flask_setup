@@ -11,7 +11,7 @@ def load_from_env(app, *args):
         app.config[a] = os.environ[a]
 
 def create_app():
-    global app, db, bcrypt, session, migrate
+    global app, db, session
     app = Flask(__name__)
 
 
@@ -38,17 +38,6 @@ def create_app():
     from app.models import Item
 
     db.create_all()
-
-    # initialize db values 
-    # initialize_db()
     """
 
     return app
-
-
-def initialize_db():
-    from app.models import Item
-    if len(Item.query.all()) == 0:
-        first_item = Item()
-        db.session.add(first_item)
-        db.session.commit()
