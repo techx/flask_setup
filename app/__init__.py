@@ -14,7 +14,6 @@ def create_app():
     global app, db, session
     app = Flask(__name__)
 
-
     # load config vars from file or environment
     if os.path.exists("config.py"):
         app.config.from_pyfile("../config.py")
@@ -25,19 +24,17 @@ def create_app():
                                     'SQLALCHEMY_DATABASE_URI') 
         print("Loading secret configs from env")
 
-    # register module blueprints
-    from app.module1.views import module1_bp
-    from app.module2.views import module2_bp
-    app.register_blueprint(module1_bp)
-    app.register_blueprint(module2_bp)
-
-    """
     # Database Setup (uncomment after database set in SQLALCHEMY_DATABASE_URI)
     #load database
     db = SQLAlchemy(app)
     from app.models import Item
 
     db.create_all()
-    """
+
+    # register module blueprints
+    from app.module1.views import module1_bp
+    from app.module2.views import module2_bp
+    app.register_blueprint(module1_bp)
+    app.register_blueprint(module2_bp)
 
     return app
