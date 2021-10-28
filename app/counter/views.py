@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 
-counter_bp = Blueprint("counter", __name__, url_prefix='/count2')
+counter_bp = Blueprint("counter", __name__, url_prefix='/count')
 
 counts = {}
 
